@@ -1,0 +1,16 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="60" fill="none"/>
+
+  <!-- Logo Text -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Montserrat, Arial, sans-serif" font-size="40" fill="#FFFFFF">
+    <tspan fill="#FFFFFF">ERA</tspan>
+    <tspan fill="#FFFFFF" font-weight="lighter">AXIS</tspan>
+  </text>
+
+  <!-- Underline Animation -->
+  <line x1="0" y1="45" x2="2000" y2="45" stroke="#FFFFFF" stroke-width="2">
+    <animate attributeName="x2" from="0" to="200" dur="1s" fill="freeze" />
+  </line>
+</svg>
