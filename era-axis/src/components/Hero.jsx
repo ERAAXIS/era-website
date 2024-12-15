@@ -3,7 +3,7 @@ const Hero = () => {
     <section className="relative h-screen flex items-center justify-center text-center">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/public/images/3.jpg')" }}
+        style={{ backgroundImage: "url('/images/3.jpg')" }}
       ></div>
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="relative z-10 max-w-3xl mx-auto px-6">

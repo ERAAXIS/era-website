@@ -1,30 +1,29 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import AboutUs from "./components/AboutUs";
-import CompanyOverview from "./components/CompanyOverview";
-import Solutions from "./components/Solutions";
-import Products from "./components/Products";
-import IndustrySolutions from "./components/IndustrySolutions";
-import Sustainability from "./components/Sustainability";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import "./index.css";
+import {
+  createBrowserRouter,
+  Route,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+
+// Pages
+import LandingPage from "./pages/landingPage/LandingPage";
+import Error404 from "./pages/errorPage/Error404";
+
+// Layout
+import RouteLayout from "./layouts/RouteLayout";
+
+// Create routes
+const routes = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RouteLayout />}>
+      <Route index element={<LandingPage />} />
+      <Route path="*" element={<Error404 />} />
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    <div className="bg-black text-white">
-      <Header />
-      <Hero />
-      <CompanyOverview />
-      <Solutions />
-      <Products />
-      <IndustrySolutions />
-      <AboutUs />
-      <Sustainability />
-      <Contact />
-      <Footer />
-    </div>
-  );
+  return <RouterProvider router={routes} />;
 }
 
 export default App;
