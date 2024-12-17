@@ -47,7 +47,7 @@ const IndustrySolutions = () => {
             image="/images/8.jpg"
             title="Software Solutions"
             description="Providing customized software solutions to boost automation, data management, and process control in industrial settings."
-            link="energy.html"
+            link="software-solutions"
           />
           <IndustryItem
             image="/images/9.jfif"

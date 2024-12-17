@@ -21,9 +21,9 @@ const routes = createBrowserRouter(
     <Route path="/" element={<RouteLayout />}>
       <Route index element={<LandingPage />} />
       <Route path="/software-solutions" element={<SoftwareSolutions />} />
-      <Route path="*" element={<Error404 />} />
       <Route path="/manufacturing" element={<ManufacturingPage />} />
       <Route path="/education" element={<EducationPage />} />
+      <Route path="*" element={<Error404 />} />
     </Route>
   )
 );
