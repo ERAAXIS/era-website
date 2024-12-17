@@ -36,7 +36,7 @@ const AboutUs = () => {
         </div>
         <div>
           <h3 className="text-2xl font-bold mb-8">Meet the Team</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <TeamMember
               image="/images/about-us/ceo.jpg"
               name="John Ransford Arthur"
@@ -59,6 +59,18 @@ const AboutUs = () => {
               image="/images/header.jpg"
               name="Nusetor Delali Foster"
               role="Software Lead"
+              description="The Software Lead oversees all aspects of software development, ensuring our solutions are innovative, reliable, and aligned with the company's goals for both efficiency and client satisfaction."
+            />
+            <TeamMember
+              image="/images/header.jpg"
+              name="Hagan Rodney Kweku Dankwa"
+              role="Full-Stack Developer"
+              description="The Software Lead oversees all aspects of software development, ensuring our solutions are innovative, reliable, and aligned with the company's goals for both efficiency and client satisfaction."
+            />
+            <TeamMember
+              image="/images/header.jpg"
+              name="Buabassah Lawson Eyarko"
+              role="Software Developer"
               description="The Software Lead oversees all aspects of software development, ensuring our solutions are innovative, reliable, and aligned with the company's goals for both efficiency and client satisfaction."
             />
           </div>

@@ -8,6 +8,8 @@ import {
 // Pages
 import LandingPage from "./pages/landingPage/LandingPage";
 import Error404 from "./pages/errorPage/Error404";
+import ManufacturingPage from "./pages/manufacturingPage/manufacturingPage";
+import EducationPage from "./pages/era-axis-edicationPage/educationPage";
 
 // Layout
 import RouteLayout from "./layouts/RouteLayout";
@@ -18,6 +20,8 @@ const routes = createBrowserRouter(
     <Route path="/" element={<RouteLayout />}>
       <Route index element={<LandingPage />} />
       <Route path="*" element={<Error404 />} />
+      <Route path="/manufacturing" element={<ManufacturingPage />} />
+      <Route path="/education" element={<EducationPage />} />
     </Route>
   )
 );
