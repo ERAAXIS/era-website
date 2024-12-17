@@ -1,13 +1,13 @@
-import Header from "../../components/Header";
-import Hero from "../../components/Hero";
-import AboutUs from "../../components/AboutUs";
-import CompanyOverview from "../../components/CompanyOverview";
-import Solutions from "../../components/Solutions";
-import Products from "../../components/Products";
-import IndustrySolutions from "../../components/IndustrySolutions";
-import Sustainability from "../../components/Sustainability";
-import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
+import Header from "../../components/Landing Page/Header";
+import Hero from "../../components/Landing Page/Hero";
+import AboutUs from "../../components/Landing Page/AboutUs";
+import CompanyOverview from "../../components/Landing Page/CompanyOverview";
+import Solutions from "../../components/Landing Page/Solutions";
+import Products from "../../components/Landing Page/Products";
+import IndustrySolutions from "../../components/Landing Page/IndustrySolutions";
+import Sustainability from "../../components/Landing Page/Sustainability";
+import Contact from "../../components/Landing Page/Contact";
+import Footer from "../../components/Landing Page/Footer";
 import { Helmet } from "react-helmet";
 
 const LandingPage = () => {

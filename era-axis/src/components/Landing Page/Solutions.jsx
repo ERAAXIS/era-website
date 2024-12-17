@@ -26,7 +26,7 @@ const Solutions = () => {
               with ERA AXIS.
             </p>
             <a
-              href="manufacturing.html"
+              href="/education"
               className="inline-block px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-300"
             >
               Learn More

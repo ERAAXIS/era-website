@@ -9,6 +9,8 @@ import {
 import LandingPage from "./pages/landingPage/LandingPage";
 import SoftwareSolutions from "./pages/softwareSolutions/Softwares";
 import Error404 from "./pages/errorPage/Error404";
+import ManufacturingPage from "./pages/manufacturingPage/manufacturingPage";
+import EducationPage from "./pages/era-axis-edicationPage/educationPage";
 
 // Layout
 import RouteLayout from "./layouts/RouteLayout";
@@ -20,6 +22,8 @@ const routes = createBrowserRouter(
       <Route index element={<LandingPage />} />
       <Route path="/software-solutions" element={<SoftwareSolutions />} />
       <Route path="*" element={<Error404 />} />
+      <Route path="/manufacturing" element={<ManufacturingPage />} />
+      <Route path="/education" element={<EducationPage />} />
     </Route>
   )
 );
