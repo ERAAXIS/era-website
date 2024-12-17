@@ -7,6 +7,7 @@ import {
 
 // Pages
 import LandingPage from "./pages/landingPage/LandingPage";
+import SoftwareSolutions from "./pages/softwareSolutions/Softwares";
 import Error404 from "./pages/errorPage/Error404";
 
 // Layout
@@ -17,6 +18,7 @@ const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RouteLayout />}>
       <Route index element={<LandingPage />} />
+      <Route path="/software-solutions" element={<SoftwareSolutions />} />
       <Route path="*" element={<Error404 />} />
     </Route>
   )
