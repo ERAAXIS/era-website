@@ -41,7 +41,7 @@ const IndustrySolutions = () => {
             image="/images/7.jpg"
             title="Manufacturing Solutions"
             description="Providing custom-built systems and equipment to optimize industrial manufacturing processes for maximum efficiency."
-            link="manufacturing.html"
+            link="manufacturing"
           />
           <IndustryItem
             image="/images/8.jpg"
@@ -53,7 +53,7 @@ const IndustrySolutions = () => {
             image="/images/9.jfif"
             title="Maintenance & Support"
             description="Offering expert repairs, installations, and troubleshooting to ensure seamless operation of industrial systems and equipment."
-            link="transportation.html"
+            link="industrial"
           />
         </div>
       </div>

@@ -1,9 +1,9 @@
-import React from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Landing Page/Header";
-import HeroSection from "./HeroSection";
-import OurServices from "./OurServices";
-import BottomSection from "./BottomSection";
+import Footer from "../../components/Landing Page/Footer";
+import HeroSection from "../../components/software/HeroSection";
+import OurServices from "../../components/software/OurServices";
+import BottomSection from "../../components/software/BottomSection";
 
 const Softwares = () => {
   return (
@@ -15,6 +15,7 @@ const Softwares = () => {
       <HeroSection />
       <OurServices />
       <BottomSection />
+      <Footer />
     </main>
   );
 };
