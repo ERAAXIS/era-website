@@ -41,19 +41,19 @@ const IndustrySolutions = () => {
             image="/images/7.jpg"
             title="Manufacturing Solutions"
             description="Providing custom-built systems and equipment to optimize industrial manufacturing processes for maximum efficiency."
-            link="/manufacturing"
+            link="manufacturing.html"
           />
           <IndustryItem
             image="/images/8.jpg"
             title="Software Solutions"
             description="Providing customized software solutions to boost automation, data management, and process control in industrial settings."
-            link="/software"
+            link="software-solutions"
           />
           <IndustryItem
             image="/images/9.jfif"
             title="Maintenance & Support"
             description="Offering expert repairs, installations, and troubleshooting to ensure seamless operation of industrial systems and equipment."
-            link="/industrial"
+            link="transportation.html"
           />
         </div>
       </div>
