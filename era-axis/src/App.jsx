@@ -10,7 +10,9 @@ import LandingPage from "./pages/landingPage/LandingPage";
 import Error404 from "./pages/errorPage/Error404";
 import ManufacturingPage from "./pages/manufacturingPage/manufacturingPage";
 import EducationPage from "./pages/era-axis-edicationPage/educationPage";
-
+import IndustrialPage from "./pages/industrialPage/industrialPage";
+import ProjectAssistancePage from "./pages/projectAssistancePage/projectAssistancePage";
+import Gallery from "./pages/Gallery/gallery";
 // Layout
 import RouteLayout from "./layouts/RouteLayout";
 
@@ -22,6 +24,9 @@ const routes = createBrowserRouter(
       <Route path="*" element={<Error404 />} />
       <Route path="/manufacturing" element={<ManufacturingPage />} />
       <Route path="/education" element={<EducationPage />} />
+      <Route path="/industrial" element={<IndustrialPage />} />
+      <Route path="/project-assistance" element={<ProjectAssistancePage />} />
+      <Route path="/gallery" element={<Gallery />} />
     </Route>
   )
 );

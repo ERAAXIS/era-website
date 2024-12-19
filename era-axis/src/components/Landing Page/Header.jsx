@@ -26,10 +26,13 @@ const Header = () => {
         aria-label="Main Navigation"
       >
         <div className="flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold">
+          <a href="/" className="text-2xl font-bold">
             <img src="/images/logo.svg" alt="ERA AXIS Logo" className="h-10" />
           </a>
           <div className="hidden md:flex space-x-6">
+            <a href="/gallery" className="hover:text-gray-300">
+              Gallery
+            </a>
             <a href="https://blog.eraaxis.com" className="hover:text-gray-300">
               News
             </a>
@@ -52,6 +55,9 @@ const Header = () => {
         </div>
         {isOpen && (
           <div className="md:hidden mt-4">
+            <a href="/gallery" className="block py-2 hover:text-gray-300">
+              Gallery
+            </a>
             <a
               href="https://blog.eraaxis.com"
               className="block py-2 hover:text-gray-300"
