@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="mb-4">Subscribe to receive the latest news and updates.</p>
             <form action="subscribe.php" method="post" className="flex">
               <input type="email" name="email" required placeholder="Enter your email" className="flex-grow px-4 py-2 rounded-l-lg focus:outline-none" />
-              <button type="submit" className="bg-green-600 text-white px-6 py-2 rounded-r-lg hover:bg-green-700 transition duration-300">Subscribe</button>
+              <button type="submit" className="bg-[#4c4795] text-white px-6 py-2 rounded-r-lg hover:bg-[#8b79ff] transition duration-300">Subscribe</button>
             </form>
           </div>
           <div className="w-full md:w-1/3 px-4">

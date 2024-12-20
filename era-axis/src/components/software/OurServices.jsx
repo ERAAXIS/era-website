@@ -64,7 +64,7 @@ const OurServices = () => {
                   key={index}
                   className="bg-gray-50 p-8 rounded-xl transition-all duration-300 hover:transform hover:scale-105 hover:bg-gray-100 group shadow-sm hover:shadow-md"
                 >
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6 transition-colors group-hover:bg-blue-700">
+                  <div className="w-12 h-12 bg-[#4c4795] rounded-lg flex items-center justify-center mb-6 transition-colors group-hover:bg-[#8b79ff]">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">

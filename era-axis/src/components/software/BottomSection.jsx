@@ -96,7 +96,7 @@ const BottomSection = () => {
                   key={index}
                   className="text-center p-8 bg-white rounded-xl shadow-sm"
                 >
-                  <Icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Icon className="w-12 h-12 text-[#4c4795] mx-auto mb-4" />
                   <div className="text-4xl font-bold text-gray-900 mb-2">
                     {Math.round(stats[index])}
                     {benefit.value.includes("%") ? "%" : "+"}
@@ -127,7 +127,7 @@ const BottomSection = () => {
                   key={index}
                   className={`w-full text-left p-6 transition-all ${
                     activeTab === index
-                      ? "bg-blue-600 text-white rounded-xl"
+                      ? "bg-[#4c4795] text-white rounded-xl"
                       : "text-gray-600 hover:bg-gray-50 rounded-xl"
                   }`}
                   onClick={() => setActiveTab(index)}
@@ -136,7 +136,7 @@ const BottomSection = () => {
                     {item.icon && (
                       <item.icon
                         className={`w-6 h-6 ${
-                          activeTab === index ? "text-white" : "text-blue-600"
+                          activeTab === index ? "text-white" : "text-[#4c4795]"
                         }`}
                       />
                     )}
@@ -147,7 +147,7 @@ const BottomSection = () => {
             </div>
             <div className="w-full lg:w-2/3 bg-gray-50 rounded-2xl p-8">
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-16 h-16 bg-[#4c4795] rounded-xl flex items-center justify-center flex-shrink-0">
                   {/* Explicitly extract and render the icon */}
                   {whyChooseUs[activeTab] && whyChooseUs[activeTab].icon
                     ? React.createElement(whyChooseUs[activeTab].icon, {
@@ -169,7 +169,7 @@ const BottomSection = () => {
         </div>
       </section>
 
-      <section className="px-6 lg:px-20 py-24 bg-gray-900 text-white">
+      <section className="px-6 lg:px-20 py-24 bg-[#] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold mb-4">
@@ -188,7 +188,7 @@ const BottomSection = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg focus:outline-none focus:border-[#8b79ff]"
                   placeholder="Enter your name"
                 />
               </div>
@@ -198,7 +198,7 @@ const BottomSection = () => {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg focus:outline-none focus:border-[#8b79ff]"
                   placeholder="Enter your email"
                 />
               </div>
@@ -207,14 +207,14 @@ const BottomSection = () => {
                   Message
                 </label>
                 <textarea
-                  className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 h-32"
+                  className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg focus:outline-none focus:border-[#8b79ff] h-32"
                   placeholder="Tell us about your project"
                 ></textarea>
               </div>
               <div className="lg:col-span-2">
                 <button
                   type="submit"
-                  className="w-full lg:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
+                  className="w-full lg:w-auto px-8 py-4 bg-[#4c4795] hover:bg-[#8b79ff] rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
                 >
                   Send Message
                   <Send className="w-5 h-5" />

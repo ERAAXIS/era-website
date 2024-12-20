@@ -2,8 +2,8 @@ import { ArrowRight, Code2, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col-reverse lg:flex-row items-center justify-between px-6 lg:px-20 py-16 lg:py-24 gap-12 lg:gap-20 bg-gray-900">
-      <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+    <section className="relative flex flex-col-reverse lg:flex-row items-center justify-between px-6 lg:px-20 py-16 lg:py-24 gap-12 lg:gap-20 bg-[#000000]">
+      <div className="absolute inset-0 bg-[#000000]" aria-hidden="true" />
       <div className="w-full lg:w-1/2 space-y-8 relative z-10">
         <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white">
           We Build Modern Software Solutions
@@ -18,7 +18,7 @@ const HeroSection = () => {
         </p>
 
         <button
-          className="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-[#4c4795] rounded-lg hover:bg-[#8b79ff] transition-colors"
           aria-label="Get Started"
         >
           Get Started
