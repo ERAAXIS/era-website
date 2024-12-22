@@ -9,7 +9,7 @@ import {
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="contact-us py-20 bg-white">
+    <section id="contact" className="contact-us py-20 bg-white text-black">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Contact Us
@@ -65,7 +65,7 @@ const ContactSection = () => {
               </div>
               <button
                 type="submit"
-                className="submit-button w-full py-3 bg-primary text-white font-semibold rounded-md transition-colors duration-300 hover:bg-primary-dark"
+                className="submit-button w-full py-3 bg-era-purple-500 text-white font-semibold rounded-md transition-colors duration-300 hover:bg-era-purple-400"
               >
                 Send Message
               </button>

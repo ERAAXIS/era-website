@@ -12,7 +12,7 @@ const WhyItMatters = () => {
           every student has the tools and experience they need to succeed, both
           as individuals and as part of a larger team.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-black">
           <div className="bg-gray-100 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Career Readiness</h3>
             <p>

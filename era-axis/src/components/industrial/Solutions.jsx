@@ -30,13 +30,16 @@ const Solutions = () => {
   return (
     <section className="py-12 bg-white rounded-lg shadow-md mb-8">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center text-green-800">
+        <h2 className="text-3xl font-bold mb-8 text-center text-era-purple-600">
           Our Solutions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutionsData.map((solution, index) => (
-            <div key={index} className="bg-green-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2 text-green-700">
+            <div
+              key={index}
+              className="bg-era-purple-50 p-6 rounded-lg shadow-md"
+            >
+              <h3 className="text-xl font-semibold mb-2 text-era-purple-400">
                 {solution.title}
               </h3>
               <p className="text-gray-700">{solution.description}</p>

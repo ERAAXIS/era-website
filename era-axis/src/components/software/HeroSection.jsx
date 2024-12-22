@@ -14,7 +14,7 @@ const HeroSection = () => {
           pivotal role in driving efficiency and innovation. ERA AXIS offers
           comprehensive software solutions that empower manufacturers to
           automate processes, gain real-time insights, and enhance operational
-          control. 
+          control.
         </p>
 
         <button

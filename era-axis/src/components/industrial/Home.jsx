@@ -1,8 +1,8 @@
 const Home = () => {
   return (
-    <section className="py-12 bg-green-50 rounded-lg shadow-md mb-8">
+    <section className="py-12 bg-era-purple-50 rounded-lg shadow-md mb-8">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-6 text-center text-green-800">
+        <h1 className="text-4xl font-bold mb-6 text-center text-era-purple-600">
           Industrial Electrical Services
         </h1>
         <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">

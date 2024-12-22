@@ -1,8 +1,8 @@
 const Benefits = () => {
   return (
-    <section className="py-12 bg-green-50 rounded-lg shadow-md mb-8">
+    <section className="py-12 bg-era-purple-50 rounded-lg shadow-md mb-8">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center text-green-800">
+        <h2 className="text-3xl font-bold mb-6 text-center text-era-purple-600">
           Benefits of Partnering
         </h2>
         <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
@@ -14,7 +14,7 @@ const Benefits = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-green-700">
+            <h3 className="text-xl font-semibold mb-2 text-era-purple-400">
               Uninterrupted Operations
             </h3>
             <p className="text-gray-700">
@@ -23,7 +23,7 @@ const Benefits = () => {
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-green-700">
+            <h3 className="text-xl font-semibold mb-2 text-era-purple-400">
               Energy Efficiency
             </h3>
             <p className="text-gray-700">
@@ -32,7 +32,7 @@ const Benefits = () => {
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-green-700">
+            <h3 className="text-xl font-semibold mb-2 text-era-purple-400">
               Safety Compliance
             </h3>
             <p className="text-gray-700">

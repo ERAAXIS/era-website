@@ -10,7 +10,7 @@ import {
 
 const OfferingCard = ({ icon: Icon, title, description }) => (
   <div className="bg-white rounded-lg shadow-md p-6">
-    <Icon className="text-4xl text-blue-500 mb-4" />
+    <Icon className="text-4xl text-era-purple-500 mb-4" />
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
   </div>
@@ -71,7 +71,7 @@ const WhatWeOffer = () => {
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
           What We Offer
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
           {offerings.map((offering, index) => (
             <OfferingCard key={index} {...offering} />
           ))}

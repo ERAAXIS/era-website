@@ -12,7 +12,7 @@ const Competitions = () => {
           showcase their talents, collaborate effectively, and present their
           ideas with clarity, preparing them for real-world challenges.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
           <div className="bg-gray-100 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Confidence Building</h3>
             <p>Gain self-assurance through competitive experiences.</p>

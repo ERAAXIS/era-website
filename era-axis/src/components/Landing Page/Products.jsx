@@ -7,7 +7,7 @@ const ProductItem = ({ image, title, description }) => (
       alt={title}
       className="w-full h-48 object-cover rounded-lg mb-4"
     />
-    <h4 className="text-xl font-bold mb-2 text-green-600">{title}</h4>
+    <h4 className="text-xl font-bold mb-2 text-era-purple-500">{title}</h4>
     <p>{description}</p>
   </div>
 );

@@ -6,11 +6,11 @@ const EducationItem = ({ image, title, description, link }) => (
       <img src={image} alt={title} className="w-full h-full object-cover" />
     </div>
     <div className="p-6">
-      <h3 className="text-xl font-bold mb-2 text-green-600">{title}</h3>
+      <h3 className="text-xl font-bold mb-2 text-era-purple-500">{title}</h3>
       <p className="mb-4 text-justify">{description}</p>
       <a
         href={link}
-        className="inline-block px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-300"
+        className="inline-block px-6 py-2 bg-era-purple-500 text-white rounded-full hover:bg-era-purple-400 transition duration-300"
       >
         Learn More
       </a>

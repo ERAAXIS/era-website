@@ -11,11 +11,11 @@ const ImageModal = ({ image, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <img src={image.image} alt={image.title} className="w-full h-auto" />
-        <h3 className="text-xl font-semibold mt-4 mb-2 text-green-800">
+        <h3 className="text-xl font-semibold mt-4 mb-2 text-era-purple-600">
           {image.title}
         </h3>
         <button
-          className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition duration-300"
+          className="mt-4 bg-era-purple-500 text-white px-4 py-2 rounded hover:bg-era-purple-400 transition duration-300"
           onClick={onClose}
         >
           Close

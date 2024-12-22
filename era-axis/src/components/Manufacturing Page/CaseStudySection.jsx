@@ -55,7 +55,7 @@ const CaseStudySection = () => {
         <div className="text-center mt-12">
           <a
             href="#"
-            className="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-full transition-all duration-300 hover:bg-primary-dark hover:shadow-lg"
+            className="inline-block px-8 py-3 bg-era-purple-500 text-white font-semibold rounded-full transition-all duration-300 hover:bg-era-purple-400 hover:shadow-lg"
           >
             Read More Success Stories
           </a>

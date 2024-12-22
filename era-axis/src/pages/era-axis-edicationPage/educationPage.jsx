@@ -7,24 +7,24 @@ import CaptureSchool from "../../components/education/CaptureSchool";
 import Competitions from "../../components/education/Competitions";
 import TurningDreams from "../../components/education/TurningDreams";
 import WhyItMatters from "../../components/education/WhyItMatters";
-// import ProceedToPayment from "../../components/education/ProceedToPayment";
 import ContactUs from "../../components/education/ContactUs";
-// import Gallery from "../../components/education/Gallery";
+import { Helmet } from "react-helmet";
 
 const EducationPage = () => {
   return (
-    <div className="education-page bg-gray-100">
+    <div className="education-page bg-gray-100 text-white">
+      <Helmet>
+        <title>ERA AXIS Education</title>
+      </Helmet>
       <Header />
-      <main className="container mx-auto px-4 py-8">
-        <Home />
-        <WhatWeOffer />
-        <WhyChooseUs />
-        <CaptureSchool />
-        <Competitions />
-        <TurningDreams />
-        <WhyItMatters />
-        <ContactUs />
-      </main>
+      <Home />
+      <WhatWeOffer />
+      <WhyChooseUs />
+      <CaptureSchool />
+      <Competitions />
+      <TurningDreams />
+      <WhyItMatters />
+      <ContactUs />
       <Footer />
     </div>
   );

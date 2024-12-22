@@ -7,7 +7,7 @@ const TeamMember = ({ image, name, role, description }) => (
       alt={name}
       className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
     />
-    <h4 className="text-xl font-bold mb-2 text-green-600">{name}</h4>
+    <h4 className="text-xl font-bold mb-2 text-era-purple-500">{name}</h4>
     <p className="font-semibold mb-2">{role}</p>
     <p>{description}</p>
   </div>
@@ -62,7 +62,7 @@ const AboutUs = () => {
               description="The Software Lead oversees all aspects of software development, ensuring our solutions are innovative, reliable, and aligned with the company's goals for both efficiency and client satisfaction."
             />
             <TeamMember
-              image="/images/header.jpg"
+              image="/images/about-us/developer-3.jpg"
               name="Hagan Rodney Kweku Dankwa"
               role="Full-Stack Developer"
               description="The Software Lead oversees all aspects of software development, ensuring our solutions are innovative, reliable, and aligned with the company's goals for both efficiency and client satisfaction."
@@ -83,24 +83,24 @@ const AboutUs = () => {
           </p>
           <ul className="list-none space-y-2">
             <li className="flex items-center">
-              <span className="text-green-600 mr-2">✓</span>Innovation:
+              <span className="text-era-purple-500 mr-2">✓</span>Innovation:
               Constantly pushing boundaries to develop cutting-edge solutions.
             </li>
             <li className="flex items-center">
-              <span className="text-green-600 mr-2">✓</span>Sustainability:
+              <span className="text-era-purple-500 mr-2">✓</span>Sustainability:
               Prioritizing environmental responsibility in all we do.
             </li>
             <li className="flex items-center">
-              <span className="text-green-600 mr-2">✓</span>Integrity: Upholding
-              the highest ethical standards in our business practices.
+              <span className="text-era-purple-500 mr-2">✓</span>Integrity:
+              Upholding the highest ethical standards in our business practices.
             </li>
             <li className="flex items-center">
-              <span className="text-green-600 mr-2">✓</span>Collaboration:
+              <span className="text-era-purple-500 mr-2">✓</span>Collaboration:
               Fostering a collaborative environment where ideas thrive.
             </li>
             <li className="flex items-center">
-              <span className="text-green-600 mr-2">✓</span>Excellence: Striving
-              for excellence in every product and service we offer.
+              <span className="text-era-purple-500 mr-2">✓</span>Excellence:
+              Striving for excellence in every product and service we offer.
             </li>
           </ul>
         </div>

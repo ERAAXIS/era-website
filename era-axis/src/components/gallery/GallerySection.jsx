@@ -7,13 +7,13 @@ const GallerySection = ({ title, description, items }) => {
 
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold mb-4 text-green-700">{title}</h2>
+      <h2 className="text-3xl font-bold mb-4 text-era-purple-400">{title}</h2>
       <p className="text-lg text-gray-700 mb-6">{description}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {items.map((item) => (
           <div
             key={item.id}
-            className="bg-green-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+            className="bg-era-purple-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
             onClick={() => setSelectedImage(item)}
           >
             <img
@@ -22,7 +22,7 @@ const GallerySection = ({ title, description, items }) => {
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-green-800">
+              <h3 className="text-lg font-semibold text-era-purple-600">
                 {item.title}
               </h3>
             </div>

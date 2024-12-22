@@ -2,6 +2,7 @@ import Header from "../../components/Landing Page/Header";
 import Footer from "../../components/Landing Page/Footer";
 import GallerySection from "../../components/gallery/GallerySection";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
 // Sample data for different gallery sections
 const galleryData = [
@@ -90,9 +91,12 @@ const galleryData = [
 const Gallery = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Gallery</title>
+      </Helmet>
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-center text-green-800">
+        <h1 className="text-4xl font-bold mb-8 text-center text-era-purple-600">
           ERA AXIS Gallery
         </h1>
         {galleryData.map((section, index) => (

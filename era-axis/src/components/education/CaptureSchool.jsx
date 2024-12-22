@@ -45,7 +45,7 @@ const CaptureSchool = () => {
               name="schoolName"
               value={formData.schoolName}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
               required
             />
           </div>
@@ -62,7 +62,7 @@ const CaptureSchool = () => {
               name="contactPerson"
               value={formData.contactPerson}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
               required
             />
           </div>
@@ -79,7 +79,7 @@ const CaptureSchool = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
               required
             />
           </div>
@@ -96,14 +96,14 @@ const CaptureSchool = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
               required
             />
           </div>
           <div className="text-center">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300"
+              className="bg-era-purple-500 text-white px-6 py-3 rounded-full hover:bg-era-purple-400 transition duration-300"
             >
               Submit Your School
             </button>

@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
           required. With hands-on projects and expert support, you&apos;ll build
           a strong portfolio and enhance your academic and professional growth.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
           <div className="bg-gray-100 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Practical Skills</h3>
             <p>

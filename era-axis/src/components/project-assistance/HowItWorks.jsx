@@ -25,17 +25,17 @@ const HowItWorks = () => {
   return (
     <section className="py-12 bg-white rounded-lg shadow-md mb-8">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center text-green-800">
+        <h2 className="text-3xl font-bold mb-8 text-center text-era-purple-600">
           How It Works
         </h2>
         <div className="space-y-8">
           {steps.map((step, index) => (
             <div key={index} className="flex items-start">
-              <div className="flex-shrink-0 bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+              <div className="flex-shrink-0 bg-era-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
                 {index + 1}
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-green-700">
+                <h3 className="text-xl font-semibold mb-2 text-era-purple-400">
                   {step.title}
                 </h3>
                 <p className="text-gray-700">{step.description}</p>
