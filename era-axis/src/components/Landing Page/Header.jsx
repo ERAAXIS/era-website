@@ -63,7 +63,7 @@ const Header = () => {
       >
         <div className="flex items-center justify-between">
           <a href="/" className="text-2xl font-bold">
-            <img src="/image/logo.svg" alt="ERA AXIS Logo" className="h-10" />
+            <img src="/images/logo.svg" alt="ERA AXIS Logo" className="h-10" />
           </a>
           <div className="hidden md:flex space-x-6">
             <a href="/gallery" className="hover:text-gray-300">
