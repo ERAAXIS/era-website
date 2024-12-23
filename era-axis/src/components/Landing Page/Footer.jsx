@@ -1,4 +1,6 @@
-import { Linkedin, Twitter, Facebook } from "lucide-react";
+import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+
+const getCurrentYear = () => new Date().getFullYear();
 
 const Footer = () => {
   return (
@@ -74,18 +76,18 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-700 pt-8 text-center">
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="text-white hover:text-gray-300">
+            <a href="https://www.linkedin.com/company/era-axis/" className="text-white hover:text-gray-300">
               <Linkedin />
             </a>
-            <a href="#" className="text-white hover:text-gray-300">
+            <a href="https://x.com/99technologiess" className="text-white hover:text-gray-300">
               <Twitter />
             </a>
-            <a href="#" className="text-white hover:text-gray-300">
-              <Facebook />
+            <a href="https://www.instagram.com/eraaxis" className="text-white hover:text-gray-300">
+              <Instagram />
             </a>
           </div>
           <p className="text-sm text-gray-500">
-            &copy; 2023 ERA AXIS. All rights reserved.
+            &copy; {getCurrentYear()} ERA AXIS. All rights reserved.
           </p>
         </div>
       </div>
