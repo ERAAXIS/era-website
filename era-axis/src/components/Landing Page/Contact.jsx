@@ -1,6 +1,45 @@
 import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import EmailServices from "../../utils/emailService";
+import React, { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState(null); // For showing success or error messages
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    const { name, email, message } = formData;
+
+    setStatus("Sending...");
+
+    const success = await EmailServices.sendEmail(
+      email,
+      name,
+      "Contact Us Message",
+      message
+    );
+
+    if (success) {
+      setStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" }); // Clear form
+    } else {
+      setStatus("Failed to send message. Please try again later.");
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-100 text-black">
       <div className="container mx-auto px-6">
@@ -8,16 +47,18 @@ const Contact = () => {
         <div className="flex flex-wrap -mx-4">
           <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
             <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-            <form action="submit_form.php" method="post" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
+                  placeholder=" "
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-era-purple-500"
                 />
               </div>
@@ -27,9 +68,11 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
+                  placeholder=" "
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-era-purple-500"
                 />
               </div>
@@ -38,10 +81,12 @@ const Contact = () => {
                   Your Message
                 </label>
                 <textarea
-                  id="message"
                   name="message"
                   rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
+                  placeholder=" "
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-era-purple-500"
                 ></textarea>
               </div>
@@ -52,18 +97,29 @@ const Contact = () => {
                 Send Message
               </button>
             </form>
+            {status && (
+              <p
+                className={`mt-4 text-center ${
+                  status === "Message sent successfully!"
+                    ? "text-green-500"
+                    : "text-red-500"
+                }`}
+              >
+                {status}
+              </p>
+            )}
           </div>
           <div className="w-full lg:w-1/2 px-4">
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             <div className="space-y-4">
               <p className="flex items-center">
-                <Phone className="mr-2" /> (123) 456-7890
+                <Phone className="mr-2" /> (233) 509-582497
               </p>
               <p className="flex items-center">
-                <Mail className="mr-2" /> info@ERA AXIS.com
+                <Mail className="mr-2" /> support@eraaxis.com
               </p>
               <p className="flex items-center">
-                <MapPin className="mr-2" /> Airport Residential , Accra
+                <MapPin className="mr-2" /> Sekondi-Takoradi, Ghana
               </p>
             </div>
             <div className="mt-8">
@@ -79,22 +135,22 @@ const Contact = () => {
                 title="Google Maps"
               ></iframe>
             </div>
-            <div className="mt-8 flex space-x-4">
+            <div className="social-media mt-8 flex space-x-4">
               <a
-                href="#"
-                className="text-era-purple-500 hover:text-era-purple-400"
+                href="https://www.linkedin.com/company/era-axis/"
+                className="text-primary hover:text-primary-dark transition-colors duration-300"
               >
                 <Linkedin />
               </a>
               <a
-                href="#"
-                className="text-era-purple-500 hover:text-era-purple-400"
+                href="https://x.com/99technologiess"
+                className="text-primary hover:text-primary-dark transition-colors duration-300"
               >
                 <Twitter />
               </a>
               <a
-                href="#"
-                className="text-era-purple-500 hover:text-era-purple-400"
+                href="https://www.instagram.com/eraaxis"
+                className="text-primary hover:text-primary-dark transition-colors duration-300"
               >
                 <Facebook />
               </a>

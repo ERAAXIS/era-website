@@ -6,8 +6,49 @@ import {
   FaTwitter,
   FaFacebookF,
 } from "react-icons/fa";
+import EmailServices from "../../utils/emailService";
+import React, { useState } from "react";
+
 
 const ContactSection = () => {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState(null); // For showing success or error messages
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    const { name, email, message } = formData;
+
+    setStatus("Sending...");
+
+    const success = await EmailServices.sendEmail(
+      email,
+      name,
+      "Contact Us Message",
+      message
+    );
+
+    if (success) {
+      setStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" }); // Clear form
+    } else {
+      setStatus("Failed to send message. Please try again later.");
+    }
+  };
+
   return (
     <section id="contact" className="contact-us py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -17,11 +58,13 @@ const ContactSection = () => {
         <div className="contact-content grid md:grid-cols-2 gap-12">
           <div className="contact-form">
             <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-            <form action="submit_form.php" method="post" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="form-group relative">
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   placeholder=" "
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
@@ -37,6 +80,8 @@ const ContactSection = () => {
                 <input
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                   placeholder=" "
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
@@ -52,6 +97,8 @@ const ContactSection = () => {
                 <textarea
                   name="message"
                   rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                   placeholder=" "
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
@@ -70,18 +117,28 @@ const ContactSection = () => {
                 Send Message
               </button>
             </form>
+            {status && (
+              <p
+                className={`mt-4 text-center ${
+                  status === "Message sent successfully!"
+                    ? "text-green-500"
+                    : "text-red-500"
+                }`}
+              >
+                {status}
+              </p>
+            )}
           </div>
           <div className="contact-info">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             <p className="flex items-center mb-4">
-              <FaPhone className="mr-2 text-primary" /> (123) 456-7890
+              <FaPhone className="mr-2 text-primary" /> (233) 509-582497
             </p>
             <p className="flex items-center mb-4">
-              <FaEnvelope className="mr-2 text-primary" /> info@ERA AXIS.com
+              <FaEnvelope className="mr-2 text-primary" /> support@eraaxis.com
             </p>
             <p className="flex items-center mb-4">
-              <FaMapMarkerAlt className="mr-2 text-primary" /> 1234 Tech Park,
-              Innovation City, Country
+              <FaMapMarkerAlt className="mr-2 text-primary" /> Sekondi-Takoradi, Ghana
             </p>
             <div className="map mt-8">
               <iframe
@@ -96,19 +153,19 @@ const ContactSection = () => {
             </div>
             <div className="social-media mt-8 flex space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/era-axis/"
                 className="text-primary hover:text-primary-dark transition-colors duration-300"
               >
                 <FaLinkedinIn />
               </a>
               <a
-                href="#"
+                href="https://x.com/99technologiess"
                 className="text-primary hover:text-primary-dark transition-colors duration-300"
               >
                 <FaTwitter />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/eraaxis"
                 className="text-primary hover:text-primary-dark transition-colors duration-300"
               >
                 <FaFacebookF />
