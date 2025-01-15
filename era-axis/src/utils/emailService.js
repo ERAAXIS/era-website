@@ -17,12 +17,12 @@ class EmailServices {
           template_id: templateId,
           user_id: userId,
           template_params: {
-            to_email: 'eratechnologiess@gmail.com',
+            to_email: email,
             from_name: fullName,
             to_name: "ERA AXIS Admin",
             reply_to: 'eratechnologiess@gmail.com',
             subject: mySubject,
-            message: `Message from ${email}:\n\n${myMessage}`,
+            message: myMessage,
           },
         },
         {
