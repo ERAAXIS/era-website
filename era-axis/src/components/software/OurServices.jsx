@@ -44,7 +44,7 @@ import {
 
 const OurServices = () => {
   return (
-    <div className="w-full bg-gray-900">
+    <div id="serivces" className="w-full bg-gray-900">
       <section className="px-6 lg:px-20 py-24 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">

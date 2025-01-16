@@ -37,25 +37,39 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="w-full md:w-1/3 px-4 mb-8 md:mb-0">
-            <h3 className="text-xl font-bold mb-4">Newsletter Signup</h3>
-            <p className="mb-4">
-              Subscribe to receive the latest news and updates.
-            </p>
-            <form action="subscribe.php" method="post" className="flex">
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-2 rounded-l-lg focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-[#4c4795] text-white px-6 py-2 rounded-r-lg hover:bg-[#8b79ff] transition duration-300"
-              >
-                Subscribe
-              </button>
+          <div
+            id="mc_embed_signup"
+            className="bg-transparent shadow-md rounded-lg max-w-lg p-6"
+          >
+            <form
+              action="https://gmail.us7.list-manage.com/subscribe/post?u=2184be1e66f070db4ae847b90&amp;id=56f5977f5a&amp;f_id=0007bce4f0"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate"
+              target="_blank"
+            >
+              <div id="mc_embed_signup_scroll">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  Subscribe to our Newsletter
+                </h2>
+                <div className="flex">
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    className="block w-full px-3 py-2 text-black border-t border-b border-gray-300 rounded-l-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    id="mce-EMAIL"
+                    required
+                  />
+                  <input
+                    type="submit"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    className="px-4 py-2 bg-era-purple-500 text-white font-medium text-sm rounded-r-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    value="Subscribe"
+                  />
+                </div>
+              </div>
             </form>
           </div>
           <div className="w-full md:w-1/3 px-4">
@@ -76,13 +90,22 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-700 pt-8 text-center">
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="https://www.linkedin.com/company/era-axis/" className="text-white hover:text-gray-300">
+            <a
+              href="https://www.linkedin.com/company/era-axis/"
+              className="text-white hover:text-gray-300"
+            >
               <Linkedin />
             </a>
-            <a href="https://x.com/99technologiess" className="text-white hover:text-gray-300">
+            <a
+              href="https://x.com/99technologiess"
+              className="text-white hover:text-gray-300"
+            >
               <Twitter />
             </a>
-            <a href="https://www.instagram.com/eraaxis" className="text-white hover:text-gray-300">
+            <a
+              href="https://www.instagram.com/eraaxis"
+              className="text-white hover:text-gray-300"
+            >
               <Instagram />
             </a>
           </div>
