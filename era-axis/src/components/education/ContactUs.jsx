@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   FaPhone,
   FaEnvelope,
@@ -5,170 +6,179 @@ import {
   FaLinkedinIn,
   FaTwitter,
   FaFacebookF,
-} from "react-icons/fa";
-import React, { useState } from "react";
-import EmailServices from "../../utils/emailService";
+} from 'react-icons/fa';
+import EmailServices from '../../utils/emailService';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
-  const [status, setStatus] = useState(null); // For showing success or error messages
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
 
-    const { name, email, message } = formData;
+    try {
+      const success = await EmailServices.sendEmail(
+        formData.email,
+        formData.name,
+        'Contact Us Message',
+        formData.message
+      );
 
-    setStatus("Sending...");
-
-    const success = await EmailServices.sendEmail(
-      email,
-      name,
-      "Contact Us Message",
-      message
-    );
-
-    if (success) {
-      setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" }); // Clear form
-    } else {
-      setStatus("Failed to send message. Please try again later.");
+      if (success) {
+        setStatus({ type: 'success', message: 'Message sent successfully!' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+      }
+    } catch (error) {
+      setStatus({ type: 'error', message: 'An error occurred. Please try again.' });
+    } finally {
+      setLoading(false);
     }
   };
 
+  const InputField = ({ type, name, label, value, onChange, multiline = false }) => (
+    <div className="relative">
+      {multiline ? (
+        <textarea
+          name={name}
+          value={value}
+          onChange={onChange}
+          required
+          rows="5"
+          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all peer pt-6"
+          placeholder=" "
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          value={value}
+          onChange={onChange}
+          required
+          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all peer pt-6"
+          placeholder=" "
+        />
+      )}
+      <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-3 top-4 left-4 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-3 peer-focus:text-purple-500">
+        {label}
+      </label>
+    </div>
+  );
+
+  const ContactInfo = ({ icon: Icon, text }) => (
+    <div className="flex items-center space-x-3 text-gray-600 mb-4">
+      <div className="p-2 bg-purple-50 rounded-lg">
+        <Icon className="w-5 h-5 text-purple-600" />
+      </div>
+      <span>{text}</span>
+    </div>
+  );
+
   return (
-    <section id="contact" className="contact-us py-20 bg-white text-black">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Contact Us
-        </h2>
-        <div className="contact-content grid md:grid-cols-2 gap-12">
-          <div className="contact-form">
-            <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="form-group relative">
-                <input
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">
+            Get in <span className="text-purple-600">Touch</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">Send us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <InputField
                   type="text"
                   name="name"
+                  label="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
-                  placeholder=" "
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <label
-                  htmlFor="name"
-                  className="absolute left-4 top-2 text-gray-600 transition-all duration-300"
-                >
-                  Your Name
-                </label>
-              </div>
-              <div className="form-group relative">
-                <input
+                <InputField
                   type="email"
                   name="email"
+                  label="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
-                  placeholder=" "
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <label
-                  htmlFor="email"
-                  className="absolute left-4 top-2 text-gray-600 transition-all duration-300"
-                >
-                  Your Email
-                </label>
-              </div>
-              <div className="form-group relative">
-                <textarea
+                <InputField
                   name="message"
-                  rows="5"
+                  label="Your Message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
-                  placeholder=" "
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                ></textarea>
-                <label
-                  htmlFor="message"
-                  className="absolute left-4 top-2 text-gray-600 transition-all duration-300"
+                  multiline
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-medium 
+                    hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 
+                    focus:ring-offset-2 transition-colors disabled:opacity-70 
+                    disabled:cursor-not-allowed"
                 >
-                  Your Message
-                </label>
-              </div>
-              <button
-                type="button"
-                className="submit-button w-full py-3 bg-era-purple-500 text-white font-semibold rounded-md transition-colors duration-300 hover:bg-era-purple-400"
-              >
-                Send Message
-              </button>
-            </form>
-            {status && (
-              <p
-                className={`mt-4 text-center ${
-                  status === "Message sent successfully!"
-                    ? "text-green-500"
-                    : "text-red-500"
-                }`}
-              >
-                {status}
-              </p>
-            )}
-          </div>
-          <div className="contact-info">
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            <p className="flex items-center mb-4">
-              <FaPhone className="mr-2 text-primary" /> (233) 509-582497
-            </p>
-            <p className="flex items-center mb-4">
-              <FaEnvelope className="mr-2 text-primary" /> support@eraaxis.com
-            </p>
-            <p className="flex items-center mb-4">
-              <FaMapMarkerAlt className="mr-2 text-primary" /> Sekondi-Takoradi,
-              Ghana
-            </p>
-            <div className="map mt-8">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0195092963173!2d-122.40135868468126!3d37.79362097975524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064c3c0d99d%3A0x3ab3f1a0e6aefa3b!2s1234%20Tech%20Park%2C%20Innovation%20City%2C%20Country!5e0!3m2!1sen!2sus!4v1602209876543!5m2!1sen!2sus"
-                width="100%"
-                height="250"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                title="Google Map"
-              ></iframe>
+                  {loading ? 'Sending...' : 'Send Message'}
+                </button>
+                {status && (
+                  <div className={`p-3 rounded-lg ${
+                    status.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'
+                  }`}>
+                    {status.message}
+                  </div>
+                )}
+              </form>
             </div>
-            <div className="social-media mt-8 flex space-x-4">
-              <a
-                href="https://www.linkedin.com/company/era-axis/"
-                className="text-primary hover:text-primary-dark transition-colors duration-300"
-              >
-                <FaLinkedinIn />
-              </a>
-              <a
-                href="https://x.com/99technologiess"
-                className="text-primary hover:text-primary-dark transition-colors duration-300"
-              >
-                <FaTwitter />
-              </a>
-              <a
-                href="https://www.instagram.com/eraaxis"
-                className="text-primary hover:text-primary-dark transition-colors duration-300"
-              >
-                <FaFacebookF />
-              </a>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">Contact Information</h3>
+              <div className="space-y-4">
+                <ContactInfo icon={FaPhone} text="(233) 509-582497" />
+                <ContactInfo icon={FaEnvelope} text="support@eraaxis.com" />
+                <ContactInfo icon={FaMapMarkerAlt} text="Sekondi-Takoradi, Ghana" />
+              </div>
+
+              <div className="mt-8">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0195092963173!2d-122.40135868468126!3d37.79362097975524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064c3c0d99d%3A0x3ab3f1a0e6aefa3b!2s1234%20Tech%20Park%2C%20Innovation%20City%2C%20Country!5e0!3m2!1sen!2sus!4v1602209876543!5m2!1sen!2sus"
+                  className="w-full h-64 rounded-lg"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  title="Location Map"
+                />
+              </div>
+
+              <div className="mt-8 flex space-x-4">
+                <a
+                  href="https://www.linkedin.com/company/era-axis/"
+                  className="p-2 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors"
+                >
+                  <FaLinkedinIn className="w-5 h-5 text-purple-600" />
+                </a>
+                <a
+                  href="https://x.com/99technologiess"
+                  className="p-2 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors"
+                >
+                  <FaTwitter className="w-5 h-5 text-purple-600" />
+                </a>
+                <a
+                  href="https://www.instagram.com/eraaxis"
+                  className="p-2 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors"
+                >
+                  <FaFacebookF className="w-5 h-5 text-purple-600" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

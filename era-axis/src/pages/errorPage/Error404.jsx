@@ -1,20 +1,63 @@
-import React from 'react'
+import React from 'react';
+import { Home, AlertCircle } from 'lucide-react';
 
 const Error404 = () => {
   return (
-    <section className="flex items-center h-full sm:p-16 dark:bg-gray-900 dark:text-gray-100">
-	<div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-40 h-40 dark:text-gray-600">
-			<path fill="currentColor" d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"></path>
-			<rect width="176" height="32" x="168" y="320" fill="currentColor"></rect>
-			<polygon fill="currentColor" points="210.63 228.042 186.588 206.671 207.958 182.63 184.042 161.37 162.671 185.412 138.63 164.042 117.37 187.958 141.412 209.329 120.042 233.37 143.958 254.63 165.329 230.588 189.37 251.958 210.63 228.042"></polygon>
-			<polygon fill="currentColor" points="383.958 182.63 360.042 161.37 338.671 185.412 314.63 164.042 293.37 187.958 317.412 209.329 296.042 233.37 319.958 254.63 341.329 230.588 365.37 251.958 386.63 228.042 362.588 206.671 383.958 182.63"></polygon>
-		</svg>
-		<p className="text-3xl">Sorry. This page doesn't exist.</p>
-		<a rel="noopener noreferrer" href="/" className="px-8 py-3 font-semibold rounded bg-primary-blue text-white">Back to homepage</a>
-	</div>
-</section>
-  )
-}
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white p-4">
+      <div className="container max-w-2xl mx-auto">
+        <div className="text-center space-y-8 px-4">
+          {/* Error Number */}
+          <div className="relative">
+            <h1 className="text-9xl font-bold text-gray-200">
+              404
+            </h1>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <AlertCircle className="w-24 h-24 text-purple-500 animate-bounce" />
+            </div>
+          </div>
 
-export default Error404
+          {/* Message */}
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-gray-800">
+              Page Not Found
+            </h2>
+            <p className="text-gray-600 max-w-md mx-auto">
+              Sorry, the page you're looking for doesn't exist or has been moved. 
+              Please check the URL or navigate back to our homepage.
+            </p>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a 
+              href="/"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors duration-300 shadow-lg hover:shadow-xl group"
+            >
+              <Home className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-1" />
+              Back to Homepage
+            </a>
+            
+            <button 
+              onClick={() => window.history.back()}
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full border-2 border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-colors duration-300"
+            >
+              Go Back
+            </button>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="relative mt-12">
+            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
+            </div>
+            <p className="text-sm text-gray-500">
+              If you believe this is a mistake, please contact our support team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Error404;

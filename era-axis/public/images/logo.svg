@@ -1,16 +1,51 @@
-<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="200" height="60" fill="none"/>
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">ERA AXIS Logo</title>
+  <desc id="logoDesc">Modern technology company logo with animated underline</desc>
+  
+  <!-- Animated Background -->
+  <rect width="200" height="60" fill="rgba(0,0,0,0.8)" rx="12" class="backdrop-blur-sm"/>
+  
+  <!-- Logo Container -->
+  <g transform="translate(20, 15)">
+    <!-- Logo Text with Gradient -->
+    <text x="0" y="30" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="600" fill="url(#logoGradient)">
+      <tspan>ERA</tspan>
+      <tspan dx="5" font-weight="300">AXIS</tspan>
+    </text>
+    
+    <!-- Animated Underline -->
+    <path d="M 0 40 L 160 40" stroke="url(#lineGradient)" stroke-width="2" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" values="0 160;160 0" dur="0.8s" fill="freeze" begin="0.5s"/>
+      <animate attributeName="opacity" values="0;1" dur="0.4s" fill="freeze"/>
+    </path>
+  </g>
 
-  <!-- Logo Text -->
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
-        font-family="Montserrat, Arial, sans-serif" font-size="40" fill="#FFFFFF">
-    <tspan fill="#FFFFFF">ERA</tspan>
-    <tspan fill="#FFFFFF" font-weight="lighter">AXIS</tspan>
-  </text>
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#CCCCCC; stop-opacity:1"/>
+    </linearGradient>
+    
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00FFFF; stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#FF00FF; stop-opacity:1"/>
+    </linearGradient>
+    
+    <!-- Optional: Embed Montserrat font -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+    </style>
+  </defs>
 
-  <!-- Underline Animation -->
-  <line x1="0" y1="45" x2="2000" y2="45" stroke="#FFFFFF" stroke-width="2">
-    <animate attributeName="x2" from="0" to="200" dur="1s" fill="freeze" />
-  </line>
+  <!-- Hover Animation -->
+  <animateTransform 
+    attributeName="transform"
+    type="scale"
+    values="1;1.02;1"
+    dur="0.3s"
+    begin="mouseover"
+    end="mouseout"
+    repeatCount="1"
+    additive="sum"/>
 </svg>

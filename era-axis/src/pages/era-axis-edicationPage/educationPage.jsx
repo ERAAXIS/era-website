@@ -9,6 +9,7 @@ import TurningDreams from "../../components/education/TurningDreams";
 import WhyItMatters from "../../components/education/WhyItMatters";
 import ContactUs from "../../components/education/ContactUs";
 import { Helmet } from "react-helmet";
+import GallerySection from "../../components/education/GalarySection";
 
 const EducationPage = () => {
   return (
@@ -23,6 +24,7 @@ const EducationPage = () => {
       <CaptureSchool />
       <Competitions />
       <TurningDreams />
+      <GallerySection />
       <WhyItMatters />
       <ContactUs />
       <Footer />

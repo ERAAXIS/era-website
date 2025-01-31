@@ -24,8 +24,8 @@ const AboutUs = () => {
   return (
     <section id="about-us" className="py-20 bg-gray-100 text-black">
       <div className="container mx-auto px-6">
-        {/* <h2 className="text-4xl font-bold mb-12 text-center">Our People</h2> */}
-        {/* <div className="mb-16">
+        <h2 className="text-4xl font-bold mb-12 text-center">Our People</h2>
+        <div className="mb-16">
           <h3 className="text-2xl font-bold mb-6">Our Journey</h3>
           <p className="text-lg">
             Our leadership team ensures seamless operations, driving innovation
@@ -33,8 +33,8 @@ const AboutUs = () => {
             deliver industry-leading solutions that consistently exceed
             expectations.
           </p>
-        </div> */}
-        {/* <div>
+        </div>
+        <div>
           <h3 className="text-2xl font-bold mb-8">Meet the Team</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <TeamMember
@@ -74,7 +74,7 @@ const AboutUs = () => {
               description="The Software Lead oversees all aspects of software development, ensuring our solutions are innovative, reliable, and aligned with the company's goals for both efficiency and client satisfaction."
             />
           </div>
-        </div> */}
+        </div>
         <div className="mt-16">
           <h3 className="text-2xl font-bold mb-6">Our Values & Culture</h3>
           <p className="mb-4">

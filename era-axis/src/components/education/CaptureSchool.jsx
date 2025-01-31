@@ -1,114 +1,120 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
 const CaptureSchool = () => {
   const [formData, setFormData] = useState({
-    schoolName: "",
-    contactPerson: "",
-    email: "",
-    phone: "",
+    schoolName: '',
+    contactPerson: '',
+    email: '',
+    phone: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({ schoolName: "", contactPerson: "", email: "", phone: "" });
+    setIsSubmitting(true);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    console.log('Form submitted:', formData);
+    setIsSubmitting(false);
+    setSuccess(true);
+    setFormData({ schoolName: '', contactPerson: '', email: '', phone: '' });
+    setTimeout(() => setSuccess(false), 3000);
   };
 
   return (
-    <section className="py-12 bg-gray-100 rounded-lg shadow-md mb-8">
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
-          Capture Your School/Organization
-        </h2>
-        <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
-          Want to bring ERA AXIS Education to your school or organization?
-          Submit your details, and we&apos;ll work with you to include your
-          institution in our hands-on learning program.
-        </p>
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-          <div className="mb-4">
-            <label
-              htmlFor="schoolName"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              School/Organization Name
-            </label>
-            <input
-              type="text"
-              id="schoolName"
-              name="schoolName"
-              value={formData.schoolName}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="contactPerson"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Contact Person
-            </label>
-            <input
-              type="text"
-              id="contactPerson"
-              name="contactPerson"
-              value={formData.contactPerson}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
-              required
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="phone"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Phone
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-era-purple-500"
-              required
-            />
-          </div>
-          <div className="text-center">
+        <div className="max-w-xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6 text-center text-gray-800">
+            Join <span className="text-purple-600">ERA AXIS</span> Education
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 text-center">
+            Want to bring hands-on learning to your institution? Let's collaborate.
+          </p>
+
+          {success && (
+            <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg border border-green-200">
+              Thank you for your interest! We'll contact you soon.
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-xl shadow-lg">
+            <div>
+              <label htmlFor="schoolName" className="block text-sm font-medium text-gray-700 mb-2">
+                School/Organization Name
+              </label>
+              <input
+                type="text"
+                id="schoolName"
+                name="schoolName"
+                value={formData.schoolName}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contactPerson" className="block text-sm font-medium text-gray-700 mb-2">
+                Contact Person
+              </label>
+              <input
+                type="text"
+                id="contactPerson"
+                name="contactPerson"
+                value={formData.contactPerson}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                required
+              />
+            </div>
+
             <button
               type="submit"
-              className="bg-era-purple-500 text-white px-6 py-3 rounded-full hover:bg-era-purple-400 transition duration-300"
+              disabled={isSubmitting}
+              className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-medium 
+                hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 
+                focus:ring-offset-2 transition-colors disabled:opacity-70 
+                disabled:cursor-not-allowed"
             >
-              Submit Your School
+              {isSubmitting ? 'Submitting...' : 'Submit Your School'}
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </section>
   );
