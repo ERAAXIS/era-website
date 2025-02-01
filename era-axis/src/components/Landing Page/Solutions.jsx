@@ -95,7 +95,7 @@ const Solutions = () => {
             link="/education"
             icon={BookOpen}
             stats={[
-              { value: "50+", label: "Courses Available" },
+              { value: "20+", label: "Courses Available" },
               { value: "1000+", label: "Students Trained" }
             ]}
           />

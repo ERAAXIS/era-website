@@ -24,7 +24,6 @@ const EducationPage = () => {
       <CaptureSchool />
       <Competitions />
       <TurningDreams />
-      <GallerySection />
       <WhyItMatters />
       <ContactUs />
       <Footer />

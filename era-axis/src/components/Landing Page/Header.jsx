@@ -5,7 +5,7 @@ const navigationLinks = [
   { title: "Gallery", url: "/gallery", isExternal: false },
   { title: "News", url: "https://blog.eraaxis.com", isExternal: true },
   { title: "Store", url: "https://store.eraaxis.com", isExternal: true },
-  { title: "Payment", url: "https://payment.eratechgh.com", isExternal: true },
+  { title: "Payment", url: "https://payment.eraaxis.com", isExternal: true },
   { title: "Contact", url: "#contact", isExternal: false },
 ];
 
