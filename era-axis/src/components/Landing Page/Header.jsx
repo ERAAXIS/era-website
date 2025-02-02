@@ -101,7 +101,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="relative group">
             <img
-              src="/images/logo.svg"
+              src="./images/ERA AXIS LOGO.png"
               alt="ERA AXIS Logo"
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
